@@ -3,7 +3,7 @@
 This project analyzes what drives the popularity of Urban Dictionary entries by modeling upvotes using a combination of feature engineering and machine learning techniques. The goal is to understand which characteristics of language and content are associated with higher levels of engagement.
 The complete project, including exploratory data analysis, modeling workflow, and visualizations, is available here:
 
-[View full analysis](https://sarahfeuer.github.io/urban-dictionary-virality-analysis/)
+[View full analysis](urban_dictionary_virality_report.pdf)
 
 
 ---
