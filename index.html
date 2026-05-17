@@ -100,6 +100,13 @@
 
   .nav-links a:hover { color: var(--highlight); }
 
+  .nav-links a.active {
+  background: linear-gradient(90deg, var(--accent3), var(--highlight));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
   /* Hero */
   .hero {
     padding: 140px 0 80px;
@@ -867,13 +874,18 @@ urban_dictionary_tibble_metrics &lt;- urban_dictionary_metric(urban_dictionary_t
   });
 
   // Scroll reveal
-  const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        const id = entry.target.id;
+        document.querySelectorAll('.nav-links a').forEach(a => {
+          a.classList.remove('active');
+          if (a.getAttribute('href') === '#' + id) a.classList.add('active');
+        });
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.15 });
 
   document.querySelectorAll('.section').forEach(el => observer.observe(el));
 </script>
